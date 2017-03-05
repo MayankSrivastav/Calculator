@@ -17,7 +17,7 @@ $(document).ready(() => {
             input2.text('0');
             input1.text('');
         } else {
-            if (input2.text().length < 8) {
+            if (input2.text().length < 8) { // TODO: handle maxlength + 'operator' case
                 if (input2.text()[0] === '0' && input1.text() === '') { input2.text(''); } // TODO: Handle 0 + 0 case
                 if (id === 'one')          { input1.text() === '' ? input2.append('1') : input2.text('1'); }
                 else if (id === 'two')     { input1.text() === '' ? input2.append('2') : input2.text('2'); }
@@ -41,13 +41,13 @@ $(document).ready(() => {
                     input1.append(input2.text() + ' - ');
                 }
                 else if (id === 'divide') {
-                    input1.append(input2.text() + ' ' + '\u00F7' + ' ');
+                    input1.append(input2.text() + ' \u00F7 ');
                 }
                 else if (id === 'multiply') {
-                    input1.append(input2.text() + ' ' + '\u00D7' + ' ');
+                    input1.append(input2.text() + ' \u00D7 ');
                 }
                 else if (id === 'modulus') {
-                    input1.append(input2.text() + ' ' + '\u0025' + ' ');
+                    input1.append(input2.text() + ' \u0025 ');
                 }
                 else if (id === 'equalTo') {
                     let finalExp = input1.text().replace('\u00F7', '/')
